@@ -44,7 +44,7 @@ public class ActivityPost extends AppCompatActivity {
         titleInput = findViewById(R.id.txt_title);
         descriptionInput = findViewById(R.id.txt_description);
         postButton = findViewById(R.id.btn_post);
-//        emailNoti = findViewById(R.id.txtview_email_noti);
+        emailNoti = findViewById(R.id.txtview_email_noti);
         typeInput = findViewById(R.id.spn_type);
         tagsInput = findViewById(R.id.spn_tags);
 
