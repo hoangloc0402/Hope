@@ -14,7 +14,6 @@
         <activity android:name=".ActivityPostDetail">
 
         </activity>
-        <activity android:name=".ActivityLeaveMessage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

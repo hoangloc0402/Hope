@@ -3,6 +3,7 @@ package com.sunset.hope;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class ActivityPostDetail extends AppCompatActivity {
 
     ListView lvComment;
     ArrayList<Comment> commentList;
+    TextView tvContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,7 @@ public class ActivityPostDetail extends AppCompatActivity {
         setContentView(R.layout.activity_post_detail);
 
         lvComment = findViewById(R.id.lv_post_comment);
-
+        tvContent = findViewById(R.id.tv_post_content);
         commentList = new ArrayList<Comment>();
 
         commentList.add(new Comment("1", "1", "Hello", "Lampard"));
