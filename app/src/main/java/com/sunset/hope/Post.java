@@ -10,6 +10,7 @@ public class Post {
     private boolean isClosed;
     private int time;
     private String title = null;
+    private Contact contact = null;
 
     public  Post() {
         this.postId = "";
@@ -21,9 +22,10 @@ public class Post {
         this.isClosed = true;
         this.time = 0;
         this.title = "";
+        this.contact = new Contact();
     }
 
-    public Post(String postId, String ownerId, String type, String[] postTags, int[] images, String description, boolean isClosed, int time, String title) {
+    public Post(String postId, String ownerId, String type, String[] postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact) {
         this.postId = postId;
         this.ownerId = ownerId;
         this.type = type;
@@ -33,6 +35,7 @@ public class Post {
         this.isClosed = isClosed;
         this.time = time;
         this.title = title;
+        this.contact = contact;
     }
 
     public String getPostId() {
@@ -105,5 +108,13 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 }
