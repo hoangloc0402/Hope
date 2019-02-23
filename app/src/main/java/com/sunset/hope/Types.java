@@ -1,9 +1,5 @@
 package com.sunset.hope;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Types {
     int[] icon;
     String[] text;
