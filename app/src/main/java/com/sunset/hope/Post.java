@@ -2,32 +2,34 @@ package com.sunset.hope;
 
 public class Post {
     private String postId = null;
-    private String ownerId = null;
+    private User user = null;
     private String type = null;
-    private String[] postTags = null;
+    private String postTags = null;
     private int[] images = null;
     private String description = null;
     private boolean isClosed;
     private int time;
     private String title = null;
     private Contact contact = null;
+    private String[] comment = null;
 
     public  Post() {
         this.postId = "";
-        this.ownerId = "";
+        this.user = new User();
         this.type = "";
-        this.postTags = new String[]{""};
+        this.postTags = "";
         this.images = new int[0];
         this.description = "";
         this.isClosed = true;
         this.time = 0;
         this.title = "";
         this.contact = new Contact();
+        this.comment = new String[10];
     }
 
-    public Post(String postId, String ownerId, String type, String[] postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact) {
+    public Post(String postId, String ownerId, String type, String postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact) {
         this.postId = postId;
-        this.ownerId = ownerId;
+        this.user = new User();
         this.type = type;
         this.postTags = postTags;
         this.images = images;
@@ -46,12 +48,12 @@ public class Post {
         this.postId = postId;
     }
 
-    public String getOwnerId() {
-        return ownerId;
+    public User getUser() {
+        return this.user;
     }
 
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
+    public void setOwnerId(User user) {
+        this.user = user;
     }
 
     public String getType() {
@@ -62,11 +64,11 @@ public class Post {
         this.type = type;
     }
 
-    public String[] getPostTags() {
+    public String getPostTags() {
         return postTags;
     }
 
-    public void setPostTags(String[] postTags) {
+    public void setPostTags(String postTags) {
         this.postTags = postTags;
     }
 

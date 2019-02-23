@@ -12,14 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    public static ArrayList<Post> postData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_layout);
-
+        createData();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
         FragmentTransaction transaction;
@@ -92,4 +96,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public static void  createData(){
+
+    }
 }

@@ -16,19 +16,20 @@ import java.util.List;
 public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.RecyclerViewHolder> {
 
     private ItemClickListener itemClickListener;
+    List<Post> data;
 
     public AdapterRCVPost(List<Post> data) {
-//        if (data == null) {
-//            this.data = new ArrayList<>();
-//            return;
-//        }
-//        this.data = data;
+        if (data == null) {
+            this.data = new ArrayList<>();
+            return;
+        }
+        this.data = data;
     }
 
     public void setData(List<Post> newData) {
-//        if (newData == null)
-//            return;
-//        this.data = newData;
+        if (newData == null)
+            return;
+        this.data = newData;
     }
 
     @Override
@@ -40,8 +41,9 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, final int position) {
-//        if (data == null)
-//            return;
+        if (data == null)
+            return;
+        Post post = data.get(position);
         holder.textViewUserName.setText("Bệnh viện quận 10");
         holder.textViewDay.setText("04/02/97");
 //        holder.imageViewWeatherStatus.setBackgroundResource();
