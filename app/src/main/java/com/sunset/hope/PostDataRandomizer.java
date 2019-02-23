@@ -16,7 +16,7 @@ public class PostDataRandomizer {
             new User("bvq4","Thong Nhat Hospital", new Contact(), true, ""),
             new User("bvq5","Chan Thuong Chinh Hinh Hospital", new Contact(), true, "")
     };
-    private String[] type = {"Cloth", "Money", "Medicine", "Food", "Blood"};
+    private String[] type = {"Cloths", "Moneys", "Medicines", "Foods", "Bloods"};
     private String[] postTags = {"Donation", "Request"};
     private int[] images = null;
     private String[] description = {
