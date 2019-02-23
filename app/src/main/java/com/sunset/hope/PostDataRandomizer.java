@@ -48,12 +48,10 @@ public class PostDataRandomizer {
     private String[] address = {
             "123 Li Thuong Kiet ",
             "456 Ton Duc Thang",
-            "12452358",
-            "558865455",
-            "751226589",
-            "452621588",
-            "46623594",
-            "741852963"
+            "489 Lu Gia",
+            "Quan 2 TPHCM",
+            "Quan Thu Duc",
+            "Quan 1 TPHCM",
     };
     private String[] mail = {
             "hoangloc@gmail.com",
@@ -67,6 +65,8 @@ public class PostDataRandomizer {
     };
 
     public Post getPost(){
-        return new Post();
+        return new Post(
+
+        );
     }
 }

@@ -27,7 +27,7 @@ public class Post {
         this.comment = new String[10];
     }
 
-    public Post(String postId, String ownerId, String type, String postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact) {
+    public Post(String postId, String ownerId, String type, String postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact, String[] comment) {
         this.postId = postId;
         this.user = new User();
         this.type = type;
@@ -38,6 +38,7 @@ public class Post {
         this.time = time;
         this.title = title;
         this.contact = contact;
+        this.comment = comment;
     }
 
     public String getPostId() {
