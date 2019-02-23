@@ -1,8 +1,10 @@
 package com.sunset.hope.helpers;
+import com.sunset.hope.entities.Comment;
 import com.sunset.hope.entities.Contact;
 import com.sunset.hope.entities.Post;
 import com.sunset.hope.entities.User;
 
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class PostDataRandomizer {
@@ -68,24 +70,22 @@ public class PostDataRandomizer {
             "vanhung@gmail.com"
     };
 
-    private String[] comment = {
-            "hoangloc@gmail.com",
-            "haohihi@gmail.com",
-            "tuongwall@gmail.com",
-            "thanh@hotmail.com",
-            "tiennguyen@gmail.com",
-            "khasan@gmail.com",
-            "khanghihi@gmail.com",
-            "vanhung@gmail.com"
-    };
+    ArrayList<Comment> commentList = new ArrayList<>();
+
+
 
     Integer getNum(Integer max){
         return ThreadLocalRandom.current().nextInt(0, max);
     }
 
     public Post getPost(){
+        String postID = postId[getNum(postId.length)];
+        commentList.add(new Comment(postID, "1", "Great", user[getNum(user.length)].getUserName(), "1 hour"));
+        commentList.add(new Comment(postID, "2", "Thank God you are here", user[getNum(user.length)].getUserName(), "1 hour"));
+        commentList.add(new Comment(postID, "3", "God Bless You!", user[getNum(user.length)].getUserName(), "56 minutes"));
+        commentList.add(new Comment(postID, "4", "Thank you!", user[getNum(user.length)].getUserName(), "50 minutes"));
         return new Post(
-            postId[getNum(postId.length)],
+            postID,
             user[getNum(user.length)],
             type[getNum(type.length)],
             postTags[getNum(postTags.length)],
@@ -95,7 +95,7 @@ public class PostDataRandomizer {
             time[getNum(time.length)],
             title[getNum(title.length)],
             new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]),
-            comment
+            commentList
         );
     }
 }

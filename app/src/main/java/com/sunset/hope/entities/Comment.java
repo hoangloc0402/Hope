@@ -8,9 +8,9 @@ public class Comment {
     String commentID;
     String content;
     String ownerId;
-    long time;
+    String time;
 
-    public Comment(String postID, String commentID, String content, String ownerId, long time) {
+    public Comment(String postID, String commentID, String content, String ownerId, String time) {
         this.postID = postID;
         this.commentID = commentID;
         this.content = content;
@@ -35,9 +35,6 @@ public class Comment {
     }
 
     public String getTime() {
-        Date date = new Date(time);
-
-
-        return date.toString();
+        return time;
     }
 }

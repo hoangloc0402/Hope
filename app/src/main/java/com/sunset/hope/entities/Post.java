@@ -1,33 +1,68 @@
 package com.sunset.hope.entities;
 
-public class Post {
-    public String postId = null;
-    public User user = null;
-    public String type = null;
-    public String postTags = null;
-    public int[] images = null;
-    public String description = null;
-    public boolean isVerified;
-    public int time;
-    public String title = null;
-    public Contact contact = null;
-    public String[] comment = null;
+import java.util.ArrayList;
 
-    public  Post() {
-        this.postId = "";
-        this.user = new User();
-        this.type = "";
-        this.postTags = "";
-        this.images = new int[0];
-        this.description = "";
-        this.isVerified = true;
-        this.time = 0;
-        this.title = "";
-        this.contact = new Contact();
-        this.comment = new String[20];
+public class Post {
+    String postId;
+    User user;
+    String type;
+    String postTags;
+    int[] images;
+    String description;
+    boolean isVerified;
+    long time;
+    String title;
+    Contact contact;
+    ArrayList<Comment> commentList;
+
+    public String getPostId() {
+        return postId;
     }
 
-    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isVerified, int time, String title, Contact contact, String[] comment) {
+    public User getUser() {
+        return user;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getPostTags() {
+        return postTags;
+    }
+
+    public int[] getImages() {
+        return images;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public ArrayList<Comment> getCommentList() {
+        return commentList;
+    }
+
+    public Post() {
+    }
+
+    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isVerified, long time, String title, Contact contact, ArrayList<Comment> commentList) {
         this.postId = postId;
         this.user = user;
         this.type = type;
@@ -38,86 +73,6 @@ public class Post {
         this.time = time;
         this.title = title;
         this.contact = contact;
-        this.comment = comment;
-    }
-
-    public String getPostId() {
-        return postId;
-    }
-
-    public void setPostId(String postId) {
-        this.postId = postId;
-    }
-
-    public User getUser() {
-        return this.user;
-    }
-
-    public void setOwnerId(User user) {
-        this.user = user;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getPostTags() {
-        return postTags;
-    }
-
-    public void setPostTags(String postTags) {
-        this.postTags = postTags;
-    }
-
-    public int[] getImages() {
-        return images;
-    }
-
-    public void setImages(int[] images) {
-        this.images = images;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isClosed() {
-        return isVerified;
-    }
-
-    public void setClosed(boolean closed) {
-        isVerified = closed;
-    }
-
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Contact getContact() {
-        return contact;
-    }
-
-    public void setContact(Contact contact) {
-        this.contact = contact;
+        this.commentList = commentList;
     }
 }

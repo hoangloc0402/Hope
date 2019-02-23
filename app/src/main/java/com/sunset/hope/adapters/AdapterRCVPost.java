@@ -53,18 +53,18 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
         if (data == null)
             return;
         Post post = data.get(position);
-        holder.textViewUserName.setText(post.user.getFullName());
+        holder.textViewUserName.setText(post.getUser().getFullName());
         holder.textViewDay.setText("04/02/97");
 //        holder.imageViewWeatherStatus.setBackgroundResource();
         holder.textViewTime.setText("7:00 AM");
-        holder.textViewSummarize.setText(post.title);
+        holder.textViewSummarize.setText(post.getTitle());
         for (int i = 1; i< Types.getTypeList().getIcon().length; i++){
-            if (post.type ==  Types.getTypeList().getText()[i]){
+            if (post.getType() ==  Types.getTypeList().getText()[i]){
                 holder.imageViewType.setImageResource(Types.getTypeList().getIcon()[i]);
                 break;
             }
         }
-        if (!post.isVerified)
+        if (!post.isVerified())
             holder.imageViewVerified.setVisibility(View.INVISIBLE);
 
         holder.itemView.setOnClickListener(v -> {
