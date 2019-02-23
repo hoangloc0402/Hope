@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ActivityLeaveMessage"></activity>
+        <activity android:name=".ActivityPostDetail"></activity>
+        <activity android:name=".ActivityLeaveMessage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
