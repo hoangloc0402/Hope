@@ -2,48 +2,39 @@ package com.sunset.hope;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ActivityPostDetail extends AppCompatActivity {
 
-    ListView lvComment;
+    RecyclerView rvComment;
     ArrayList<Comment> commentList;
-    TextView tvContent;
+    AdapterRCVComment adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
 
-        lvComment = findViewById(R.id.lv_post_comment);
-        tvContent = findViewById(R.id.tv_post_content);
-        commentList = new ArrayList<Comment>();
+        rvComment = findViewById(R.id.lv_post_comment);
 
-        commentList.add(new Comment("1", "1", "Hellosadddddddddkjas jkasdhaskdjsahdkja shdkjash dkjasdhakjsd hasjkdhaskjdhaskjd haksjd hakjsdh askjdhass a", "Lampard"));
-        commentList.add(new Comment("1", "2", "HelloWorld", "Lampard"));
-        commentList.add(new Comment("1", "3", "HelloYou", "Thanh"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
-        commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
+        commentList = new ArrayList<>();
 
-        Toast.makeText(this, ""+commentList.size(), Toast.LENGTH_SHORT).show();
-        AdapterPostDetail adapter = new AdapterPostDetail(ActivityPostDetail.this,
-                R.layout.comment_layout, commentList);
+        for(int i=0;i<50;i++){
+            commentList.add(new Comment(i+"", "comment "+ i,
+                    "Hello User Number "+ i, "owner "+i, new Date().getTime()));
+        }
 
-        lvComment.setAdapter(adapter);
+        adapter = new AdapterRCVComment(commentList);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        rvComment.setAdapter(adapter);
+        rvComment.setLayoutManager(llm);
     }
 
 

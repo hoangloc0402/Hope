@@ -39,10 +39,27 @@
             android:layout_height="0dp"
             android:layout_weight="0.025"
             android:background="#00FFFFFF"/>
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:id="@+id/lv_post_comment"
             android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:id="@+id/edt_comment"
+            android:inputType="textMultiLine"
+            android:paddingLeft="5dp"
+            android:hint="Give your comment..."/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Comment"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.1"
+            android:id="@+id/btn_comment"/>
     </LinearLayout>
 
 

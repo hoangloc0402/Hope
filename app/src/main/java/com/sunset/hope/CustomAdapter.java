@@ -39,8 +39,8 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflter.inflate(R.layout.custom_spinner_item, null);
-        ImageView icon = (ImageView) view.findViewById(R.id.spnImgView);
-        TextView names = (TextView) view.findViewById(R.id.spnTextView);
+        ImageView icon = view.findViewById(R.id.spnImgView);
+        TextView names = view.findViewById(R.id.spnTextView);
         icon.setImageResource(flags[i]);
         names.setText(countryNames[i]);
         return view;
