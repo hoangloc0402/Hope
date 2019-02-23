@@ -29,16 +29,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.025"
-            android:background="#00FFFFFF"/>
-
-        <TextView
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Hello everyone"
-            android:padding="10dp"
+            android:padding="5dp"
             android:id="@+id/tv_post_content"
             />
         <TextView
@@ -49,7 +43,7 @@
         <ListView
             android:layout_width="match_parent"
             android:id="@+id/lv_post_comment"
-            android:layout_height="0dp"/>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 
