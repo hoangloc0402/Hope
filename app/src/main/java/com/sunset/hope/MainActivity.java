@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
         FragmentTransaction transaction;
-//        transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.content_frame, new FragmentMain());
-//        transaction.commit();
+        transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, new FragmentMain());
+        transaction.commit();
 
         NavigationView navigationView =  findViewById(R.id.nav_view);
 
@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
