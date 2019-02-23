@@ -1,6 +1,8 @@
 package com.sunset.hope;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +15,9 @@ import java.util.List;
 
 public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.RecyclerViewHolder> {
 
+    private ItemClickListener itemClickListener;
 
-    public AdapterRCVPost(List<Integer> data) {
+    public AdapterRCVPost(List<Post> data) {
 //        if (data == null) {
 //            this.data = new ArrayList<>();
 //            return;
@@ -22,7 +25,7 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
 //        this.data = data;
     }
 
-    public void setData(List<Integer> newData) {
+    public void setData(List<Post> newData) {
 //        if (newData == null)
 //            return;
 //        this.data = newData;
@@ -36,7 +39,7 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewHolder holder, final int position) {
 //        if (data == null)
 //            return;
         holder.textViewUserName.setText("Bệnh viện quận 10");
@@ -44,12 +47,11 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
 //        holder.imageViewWeatherStatus.setBackgroundResource();
         holder.textViewTime.setText("7:00 AM");
         holder.textViewSumarize.setText("This is just a small sumarize");
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
+        holder.itemView.setOnClickListener(v -> {
+            if (itemClickListener != null)
+                itemClickListener.onClick(holder.itemView, position);
         });
+
     }
 
     @Override
@@ -71,5 +73,10 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
 
         }
     }
-
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+    public interface ItemClickListener {
+        void onClick(View view, Integer position);
+    }
 }

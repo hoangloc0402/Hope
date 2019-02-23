@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.075"
-        android:background="#aarrggbb"/>
+        android:background="#00FFFFFF"/>
 
     <TextView
         android:id="@+id/tv_post_title"
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.075"
-        android:background="#aarrggbb"/>
+        android:background="#00FFFFFF"/>
 
     <EditText
         android:id="@+id/edt_leave_message"
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.075"
-        android:background="#aarrggbb"/>
+        android:background="#00FFFFFF"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
-            android:background="#aarrggbb"/>
+            android:background="#00FFFFFF"/>
 
         <Button
             android:id="@+id/btn_message_cancel"
@@ -72,7 +72,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
-            android:background="#aarrggbb"/>
+            android:background="#00FFFFFF"/>
 
 
         <Button
