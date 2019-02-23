@@ -1,6 +1,8 @@
 package com.sunset.hope;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 
 public class FragmentMain  extends Fragment {
     View myView;
+    FloatingActionButton fab;
     public FragmentMain(){}
 
     @Override
@@ -40,6 +43,16 @@ public class FragmentMain  extends Fragment {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
+        fab = myView.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ActivityPost.class);
+                startActivity(intent);
+            }
+        });
+
         return myView;
     }
 
