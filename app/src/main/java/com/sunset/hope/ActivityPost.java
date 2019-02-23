@@ -2,6 +2,7 @@ package com.sunset.hope;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,20 +39,20 @@ public class ActivityPost extends AppCompatActivity {
     }
 
     public void setTagSpinner(){
-        List<String> categories = new ArrayList<String>();
-        categories.add("Select Type");
-        categories.add("Donate");
-        categories.add("Request");
+        int[] icon = {R.drawable.spn_drop_down, R.drawable.spn_foods, R.drawable.spn_foods};
+        String[] text = {"Select Tag", "Donate", "Request"};
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tagsInput.setAdapter(dataAdapter);
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), icon, text);
+        tagsInput.setAdapter(customAdapter);
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
 
         userAvatar = findViewById(R.id.img_avatar);
         userName = findViewById(R.id.txtview_name);
@@ -65,6 +66,8 @@ public class ActivityPost extends AppCompatActivity {
         typeInput = findViewById(R.id.spn_type);
         tagsInput = findViewById(R.id.spn_tags);
 
+
+        userAvatar.setImageResource(R.drawable.avatar_01);
         setTypeSpinner();
         setTagSpinner();
 
