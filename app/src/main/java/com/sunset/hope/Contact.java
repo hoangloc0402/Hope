@@ -1,17 +1,17 @@
 package com.sunset.hope;
 
-public class UserInfo {
+public class Contact {
     private String phoneNumber = null;
     private String address = null;
     private String email = null;
 
-    public UserInfo() {
+    public Contact() {
         this.phoneNumber = "";
         this.address = "";
         this.email = "";
     }
 
-    public UserInfo(String phoneNumber, String address, String email) {
+    public Contact(String phoneNumber, String address, String email) {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.email = email;

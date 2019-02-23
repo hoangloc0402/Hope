@@ -3,22 +3,22 @@ package com.sunset.hope;
 public class User {
     private String userName = null;
     private String fullName =  null;
-    private UserInfo userInfo = null;
+    private Contact contact = null;
     private Boolean isVerified = null;
     private String description = null;
 
     public User() {
         this.userName = "";
         this.fullName = "";
-        this.userInfo = new UserInfo();
+        this.contact = new Contact();
         this.isVerified = false;
         this.description = "";
     }
 
-    public User(String userName, String fullName, UserInfo userInfo, Boolean isVerified, String description) {
+    public User(String userName, String fullName, Contact contact, Boolean isVerified, String description) {
         this.userName = userName;
         this.fullName = fullName;
-        this.userInfo = userInfo;
+        this.contact = contact;
         this.isVerified = isVerified;
         this.description = description;
     }
@@ -35,16 +35,16 @@ public class User {
         return fullName;
     }
 
-    public UserInfo getUserInfo() {
-        return userInfo;
+    public Contact getContact() {
+        return contact;
     }
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
-    public void setUserInfo(UserInfo userInfo) {
-        this.userInfo = userInfo;
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     public Boolean getVerified() {
