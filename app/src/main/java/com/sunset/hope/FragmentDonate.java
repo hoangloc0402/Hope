@@ -39,7 +39,7 @@ public class FragmentDonate extends Fragment {
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        adapterRCV= new AdapterRCVPost(MainActivity.postData);
+        adapterRCV= new AdapterRCVPost(true);
         recyclerView.setAdapter(adapterRCV);
 
         adapterRCV.setItemClickListener((view, position) -> {
