@@ -9,6 +9,7 @@ public class Post {
     private String description = null;
     private boolean isClosed;
     private int time;
+    private String title = null;
 
     public  Post() {
         this.postId = "";
@@ -19,9 +20,10 @@ public class Post {
         this.description = "";
         this.isClosed = true;
         this.time = 0;
+        this.title = "";
     }
 
-    public Post(String postId, String ownerId, String type, String[] postTags, int[] images, String description, boolean isClosed, int time) {
+    public Post(String postId, String ownerId, String type, String[] postTags, int[] images, String description, boolean isClosed, int time, String title) {
         this.postId = postId;
         this.ownerId = ownerId;
         this.type = type;
@@ -30,6 +32,7 @@ public class Post {
         this.description = description;
         this.isClosed = isClosed;
         this.time = time;
+        this.title = title;
     }
 
     public String getPostId() {
@@ -94,5 +97,13 @@ public class Post {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
