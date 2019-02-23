@@ -1,4 +1,4 @@
-package com.sunset.hope;
+package com.sunset.hope.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sunset.hope.R;
 
 public class CustomAdapter extends BaseAdapter {
     Context context;

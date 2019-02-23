@@ -1,4 +1,4 @@
-package com.sunset.hope;
+package com.sunset.hope.activities;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
@@ -8,13 +8,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
+import com.sunset.hope.fragments.FragmentMain;
+import com.sunset.hope.helpers.PostDataRandomizer;
+import com.sunset.hope.R;
+import com.sunset.hope.entities.Post;
+
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;

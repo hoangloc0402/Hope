@@ -1,13 +1,15 @@
-package com.sunset.hope;
+package com.sunset.hope.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-public class ActivityViewProfile extends AppCompatActivity {
+import com.sunset.hope.R;
+
+public class ActivityAbout extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_profile);
+        setContentView(R.layout.activity_about);
     }
 }

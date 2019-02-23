@@ -1,4 +1,4 @@
-package com.sunset.hope;
+package com.sunset.hope.helpers;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.sunset.hope.R;
+import com.sunset.hope.activities.MainActivity;
 
 public class SplashScreen extends Activity {
     public void onAttachedToWindow() {

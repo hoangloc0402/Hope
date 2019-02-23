@@ -1,4 +1,8 @@
-package com.sunset.hope;
+package com.sunset.hope.helpers;
+import com.sunset.hope.entities.Contact;
+import com.sunset.hope.entities.Post;
+import com.sunset.hope.entities.User;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class PostDataRandomizer {

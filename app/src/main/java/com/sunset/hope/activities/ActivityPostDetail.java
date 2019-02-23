@@ -1,12 +1,13 @@
-package com.sunset.hope;
+package com.sunset.hope.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.sunset.hope.adapters.AdapterRCVComment;
+import com.sunset.hope.entities.Comment;
+import com.sunset.hope.R;
 
 import java.util.ArrayList;
 import java.util.Date;

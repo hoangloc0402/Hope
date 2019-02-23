@@ -1,14 +1,16 @@
-package com.sunset.hope;
+package com.sunset.hope.adapters;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.sunset.hope.entities.Post;
+import com.sunset.hope.helpers.PostDataRandomizer;
+import com.sunset.hope.R;
+import com.sunset.hope.entities.Types;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,9 +58,9 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
 //        holder.imageViewWeatherStatus.setBackgroundResource();
         holder.textViewTime.setText("7:00 AM");
         holder.textViewSummarize.setText(post.title);
-        for (int i= 1; i< Types.getTypeList().icon.length; i++){
-            if (post.type ==  Types.getTypeList().text[i]){
-                holder.imageViewType.setImageResource(Types.getTypeList().icon[i]);
+        for (int i = 1; i< Types.getTypeList().getIcon().length; i++){
+            if (post.type ==  Types.getTypeList().getText()[i]){
+                holder.imageViewType.setImageResource(Types.getTypeList().getIcon()[i]);
                 break;
             }
         }

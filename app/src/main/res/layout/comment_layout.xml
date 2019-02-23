@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFFFF"
-    android:layout_margin="0.1dp">
+    android:background="@color/background_color"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp">
 
     <ImageView
         android:id="@+id/imv_comment_image"

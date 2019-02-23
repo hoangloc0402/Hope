@@ -11,30 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ActivityPostDetail">
+        <activity android:name=".activities.ActivityPostDetail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name=".helpers.SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
 
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name=".ActivityPost"
+            android:name=".activities.ActivityPost"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ActivityAbout"
+            android:name=".activities.ActivityAbout"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
     </application>
 
