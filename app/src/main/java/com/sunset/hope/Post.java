@@ -7,7 +7,7 @@ public class Post {
     public String postTags = null;
     public int[] images = null;
     public String description = null;
-    public boolean isClosed;
+    public boolean isVerified;
     public int time;
     public String title = null;
     public Contact contact = null;
@@ -20,21 +20,21 @@ public class Post {
         this.postTags = "";
         this.images = new int[0];
         this.description = "";
-        this.isClosed = true;
+        this.isVerified = true;
         this.time = 0;
         this.title = "";
         this.contact = new Contact();
         this.comment = new String[20];
     }
 
-    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact, String[] comment) {
+    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isVerified, int time, String title, Contact contact, String[] comment) {
         this.postId = postId;
         this.user = user;
         this.type = type;
         this.postTags = postTags;
         this.images = images;
         this.description = description;
-        this.isClosed = isClosed;
+        this.isVerified = isVerified;
         this.time = time;
         this.title = title;
         this.contact = contact;
@@ -90,11 +90,11 @@ public class Post {
     }
 
     public boolean isClosed() {
-        return isClosed;
+        return isVerified;
     }
 
     public void setClosed(boolean closed) {
-        isClosed = closed;
+        isVerified = closed;
     }
 
     public int getTime() {
