@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:textSize="15sp"
-                    android:text="Just a short description "
+                    android:text="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.  "
                     android:textAlignment="viewStart"
                     app:layout_constraintStart_toEndOf="@+id/imv_post_image"
                     app:layout_constraintTop_toBottomOf="@+id/tv_post_date" />
@@ -93,11 +93,12 @@
         <Button
             android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:text="Comment"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/round_button"
             android:layout_gravity="right"
             android:layout_marginRight="10dp"
-            android:layout_weight="0.1"
             android:id="@+id/btn_comment"/>
     </LinearLayout>
 
