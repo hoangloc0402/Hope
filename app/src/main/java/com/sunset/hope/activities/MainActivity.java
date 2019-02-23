@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                         switch (menuItem.getItemId()){
                             case R.id.nav_profile:
                                 Toast.makeText(getBaseContext(),"My Profile", Toast.LENGTH_SHORT).show();
-//                                intent = new Intent(getApplicationContext(), ActivityTab.class);
-//                                startActivity(intent);
+                                intent = new Intent(getApplicationContext(), ActivityViewProfile.class);
+                                startActivity(intent);
                                 break;
                             case R.id.nav_post:
                                 Toast.makeText(getBaseContext(),"My Post", Toast.LENGTH_SHORT).show();

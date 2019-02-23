@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sunset.hope.R;
+import com.sunset.hope.activities.ActivityPostDetail;
 import com.sunset.hope.adapters.AdapterRCVPost;
 
 public class FragmentDonate extends Fragment {
@@ -46,12 +47,15 @@ public class FragmentDonate extends Fragment {
             builder.setItems(R.array.listOption, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             switch (which){
-                                case 0: break;
-                                case 1: break;
-                                case 3: break;
-                                case 2:
-                                    Intent intent = new Intent(Intent. ACTION_DIAL, Uri.parse("tel:" + "0326633637"));
+                                case 0:
+                                    Intent intent = new Intent(getContext(), ActivityPostDetail.class);
                                     startActivity(intent);
+                                    break;
+                                case 1: break;
+
+                                case 2:
+                                    Intent intent2 = new Intent(Intent. ACTION_DIAL, Uri.parse("tel:" + "0326633637"));
+                                    startActivity(intent2);
                                     break;
                                 default:break;
                             }
