@@ -1,17 +1,17 @@
 package com.sunset.hope;
 
 public class Post {
-    private String postId = null;
-    private User user = null;
-    private String type = null;
-    private String postTags = null;
-    private int[] images = null;
-    private String description = null;
-    private boolean isClosed;
-    private int time;
-    private String title = null;
-    private Contact contact = null;
-    private String[] comment = null;
+    public String postId = null;
+    public User user = null;
+    public String type = null;
+    public String postTags = null;
+    public int[] images = null;
+    public String description = null;
+    public boolean isClosed;
+    public int time;
+    public String title = null;
+    public Contact contact = null;
+    public String[] comment = null;
 
     public  Post() {
         this.postId = "";
@@ -24,12 +24,12 @@ public class Post {
         this.time = 0;
         this.title = "";
         this.contact = new Contact();
-        this.comment = new String[10];
+        this.comment = new String[20];
     }
 
-    public Post(String postId, String ownerId, String type, String postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact, String[] comment) {
+    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isClosed, int time, String title, Contact contact, String[] comment) {
         this.postId = postId;
-        this.user = new User();
+        this.user = user;
         this.type = type;
         this.postTags = postTags;
         this.images = images;

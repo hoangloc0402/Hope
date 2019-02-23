@@ -1,5 +1,5 @@
 package com.sunset.hope;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PostDataRandomizer {
 
@@ -14,7 +14,7 @@ public class PostDataRandomizer {
             new User("bvq2","Cho Ray Hospital", new Contact(), true, ""),
             new User("bvq3","115 Hospital", new Contact(), true, ""),
             new User("bvq4","Thong Nhat Hospital", new Contact(), true, ""),
-            new User("bvq5","Chan Thuong Chinh Hinh Hospital", new Contact(), true, ""),
+            new User("bvq5","Chan Thuong Chinh Hinh Hospital", new Contact(), true, "")
     };
     private String[] type = {"Cloth", "Money", "Medicine", "Food", "Blood"};
     private String[] postTags = {"Donation", "Request"};
@@ -64,9 +64,34 @@ public class PostDataRandomizer {
             "vanhung@gmail.com"
     };
 
+    private String[] comment = {
+            "hoangloc@gmail.com",
+            "haohihi@gmail.com",
+            "tuongwall@gmail.com",
+            "thanh@hotmail.com",
+            "tiennguyen@gmail.com",
+            "khasan@gmail.com",
+            "khanghihi@gmail.com",
+            "vanhung@gmail.com"
+    };
+
+    Integer getNum(Integer max){
+        return ThreadLocalRandom.current().nextInt(0, max);
+    }
+
     public Post getPost(){
         return new Post(
-
+            postId[getNum(postId.length)],
+            user[getNum(user.length)],
+            type[getNum(type.length)],
+            postTags[getNum(postTags.length)],
+            null,
+            description[getNum(description.length)],
+            isClosed[getNum(isClosed.length)],
+            time[getNum(time.length)],
+            title[getNum(title.length)],
+            new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]),
+            comment
         );
     }
 }

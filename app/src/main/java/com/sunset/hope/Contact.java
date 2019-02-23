@@ -1,9 +1,9 @@
 package com.sunset.hope;
 
 public class Contact {
-    private String phoneNumber = null;
-    private String address = null;
-    private String email = null;
+    public String phoneNumber = null;
+    public String address = null;
+    public String email = null;
 
     public Contact() {
         this.phoneNumber = "";

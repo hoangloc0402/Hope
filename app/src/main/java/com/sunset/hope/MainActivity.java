@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
@@ -97,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void  createData(){
-
+        postData = new ArrayList<>();
+        PostDataRandomizer randomizer = new PostDataRandomizer();
+        for (int i=0; i<10; i++){
+            postData.add(randomizer.getPost());
+        }
     }
 }

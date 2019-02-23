@@ -77,7 +77,7 @@ public class ActivityPost extends AppCompatActivity {
                     String tagsString = tagsInput.getSelectedItem().toString();
 
                     Contact contact = new Contact(phoneNumberString, emailString, addressString);
-                    Post post = new Post("P111111", "U111111", typeString, new String[]{"", ""}, new int[]{0,0}, descriptionString, false, 0, titleString, contact);
+//                    Post post = new Post("P111111", "U111111", typeString, new String[]{"", ""}, new int[]{0,0}, descriptionString, false, 0, titleString, contact);
 
                     //send to Firebase
                 }
