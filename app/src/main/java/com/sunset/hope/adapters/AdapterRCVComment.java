@@ -1,11 +1,13 @@
-package com.sunset.hope;
+package com.sunset.hope.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sunset.hope.entities.Comment;
+import com.sunset.hope.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +42,7 @@ public class AdapterRCVComment extends RecyclerView.Adapter<AdapterRCVComment.Re
         if (data == null)
             return;
         Comment comment = data.get(position);
-        holder.tvName.setText(comment.ownerId );
+        holder.tvName.setText(comment.getOwnerId() );
         holder.tvDate.setText(String.valueOf(comment.getTime()));
         holder.tvContent.setText(comment.getContent());
 

@@ -1,10 +1,13 @@
-package com.sunset.hope;
+package com.sunset.hope.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-    public class AdapterMainTab extends FragmentPagerAdapter {
+import com.sunset.hope.fragments.FragmentDonate;
+import com.sunset.hope.fragments.FragmentRequest;
+
+public class AdapterMainTab extends FragmentPagerAdapter {
         int numberOfTabs;
         public AdapterMainTab(FragmentManager fm, int NumOfTabs) {
             super(fm);

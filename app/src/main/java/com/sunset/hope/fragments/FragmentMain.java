@@ -1,4 +1,4 @@
-package com.sunset.hope;
+package com.sunset.hope.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.sunset.hope.R;
+import com.sunset.hope.activities.ActivityPost;
+import com.sunset.hope.adapters.AdapterMainTab;
 
 public class FragmentMain  extends Fragment {
     View myView;

@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#FFFFFF"
     android:fillViewport="true"
-    tools:context=".ActivityPostDetail">
+    tools:context=".activities.ActivityPostDetail">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -16,26 +17,12 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
-            android:layout_margin="0.5dp"
-            app:cardCornerRadius="10dp"
-            android:layout_marginHorizontal="20dp">
+            app:cardBackgroundColor="@color/background_color"
+            android:layout_margin="0.5dp">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_post_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Nguyen Van Thanh"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imv_post_image"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imv_post_image"
@@ -48,6 +35,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_money" />
+
+                <TextView
+                    android:id="@+id/tv_post_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Nguyen Van Thanh"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imv_post_image"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_post_date"
@@ -66,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:textSize="15sp"
+                    android:background="@drawable/round_background"
                     android:text="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.  "
                     android:textAlignment="viewStart"
                     app:layout_constraintStart_toEndOf="@+id/imv_post_image"
@@ -84,7 +84,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.1"
             android:id="@+id/edt_comment"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:background="@drawable/round_background"
             android:inputType="textMultiLine"
             android:paddingLeft="5dp"

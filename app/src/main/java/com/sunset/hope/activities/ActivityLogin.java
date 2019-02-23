@@ -1,15 +1,16 @@
-package com.sunset.hope;
+package com.sunset.hope.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.sunset.hope.R;
 
 public class ActivityLogin extends AppCompatActivity {
     private EditText emailInput = null;

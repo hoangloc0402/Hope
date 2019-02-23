@@ -1,4 +1,4 @@
-package com.sunset.hope;
+package com.sunset.hope.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.sunset.hope.R;
 
 import java.util.regex.Pattern;
 

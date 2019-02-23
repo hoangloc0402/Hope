@@ -1,8 +1,18 @@
-package com.sunset.hope;
+package com.sunset.hope.entities;
+
+import com.sunset.hope.R;
 
 public class Types {
     int[] icon;
     String[] text;
+
+    public int[] getIcon() {
+        return icon;
+    }
+
+    public String[] getText() {
+        return text;
+    }
 
     public Types(int[] icon, String[] text){
         this.icon = icon;

@@ -1,4 +1,4 @@
-package com.sunset.hope;
+package com.sunset.hope.entities;
 
 public class Contact {
     public String phoneNumber = null;

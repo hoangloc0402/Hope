@@ -1,7 +1,9 @@
-package com.sunset.hope;
+package com.sunset.hope.helpers;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.sunset.hope.entities.Post;
+import com.sunset.hope.entities.User;
 
 import java.util.ArrayList;
 
