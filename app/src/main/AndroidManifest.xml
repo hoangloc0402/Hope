@@ -33,6 +33,9 @@
         <activity
             android:name=".ActivityPost"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ActivityAbout"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
     </application>
 
 </manifest>
