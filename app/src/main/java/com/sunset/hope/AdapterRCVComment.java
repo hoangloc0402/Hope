@@ -40,8 +40,9 @@ public class AdapterRCVComment extends RecyclerView.Adapter<AdapterRCVComment.Re
         if (data == null)
             return;
         Comment comment = data.get(position);
-        holder.tvName.setText(comment.ownerId);
-        holder.tvContent.setText(comment.getTime() +"\n" + comment.getContent());
+        holder.tvName.setText(comment.ownerId );
+        holder.tvDate.setText(String.valueOf(comment.getTime()));
+        holder.tvContent.setText(comment.getContent());
 
         holder.itemView.setOnClickListener(v -> {
             if (itemClickListener != null)
@@ -58,12 +59,13 @@ public class AdapterRCVComment extends RecyclerView.Adapter<AdapterRCVComment.Re
 
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvContent;
+        TextView tvName, tvContent, tvDate;
 
         public RecyclerViewHolder(View view) {
             super(view);
             tvName = view.findViewById(R.id.tv_comment_name);
             tvContent = view.findViewById(R.id.tv_comment_content);
+            tvDate = view.findViewById(R.id.tv_comment_date);
 
         }
 
