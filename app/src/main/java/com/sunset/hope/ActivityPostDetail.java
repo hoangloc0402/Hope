@@ -31,6 +31,9 @@ public class ActivityPostDetail extends AppCompatActivity {
                     "Hello User Number "+ i, "owner "+i, new Date().getTime()));
         }
 
+        commentList.add(new Comment(1+"", "comment "+ 1,
+                "Hello User Number dasldkasjdklasjdlaksdj asslkdjaslkdjasdklasj dlkasdjkalsdjasksldjasl kdajslkdajsdlkasjdlkasjdlk asdjaslkdj assldkasjdk lasjdlkasdjsa", "owner ", new Date().getTime()));
+
         adapter = new AdapterRCVComment(commentList);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rvComment.setAdapter(adapter);

@@ -1,27 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="2dp"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:layout_margin="0.5dp">
 
+    <ImageView
+        android:id="@+id/imv_comment_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/circle_background"
+        app:srcCompat="@drawable/ic_money" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_background"
+
+        app:layout_constraintStart_toEndOf="@+id/imv_comment_image"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_comment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Nguyen Van Thanh"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_comment_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:text="Just a short description "
+            android:textAlignment="viewStart"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment_name" />
+
+
+    </android.support.constraint.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tv_comment_name"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_comment_date"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="18sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="23/02/19"
+        android:textSize="9sp"
         android:textStyle="bold"
-        android:paddingLeft="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@+id/imv_comment_image"
+        app:layout_constraintTop_toBottomOf="@+id/layout_comment" />
 
-    <TextView
-        android:paddingLeft="10dp"
-        android:layout_marginTop="1dp"
-        android:id="@+id/tv_comment_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

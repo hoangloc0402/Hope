@@ -1,5 +1,8 @@
 package com.sunset.hope;
 
+
+import java.util.Date;
+
 public class Comment {
     String postID;
     String commentID;
@@ -31,7 +34,10 @@ public class Comment {
         return ownerId;
     }
 
-    public long getTime() {
-        return time;
+    public String getTime() {
+        Date date = new Date(time);
+
+
+        return date.toString();
     }
 }
