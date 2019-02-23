@@ -23,7 +23,7 @@ public class ActivityPostDetail extends AppCompatActivity {
         tvContent = findViewById(R.id.tv_post_content);
         commentList = new ArrayList<Comment>();
 
-        commentList.add(new Comment("1", "1", "Hello", "Lampard"));
+        commentList.add(new Comment("1", "1", "Hellosadddddddddkjas jkasdhaskdjsahdkja shdkjash dkjasdhakjsd hasjkdhaskjdhaskjd haksjd hakjsdh askjdhass a", "Lampard"));
         commentList.add(new Comment("1", "2", "HelloWorld", "Lampard"));
         commentList.add(new Comment("1", "3", "HelloYou", "Thanh"));
         commentList.add(new Comment("1", "4", "HelloMe", "Lampard"));
