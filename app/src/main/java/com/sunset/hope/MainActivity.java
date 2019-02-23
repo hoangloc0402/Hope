@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.nav_about:
                                 Toast.makeText(getBaseContext(),"About", Toast.LENGTH_SHORT).show();
-//                                intent = new Intent(getApplicationContext(), ActivitySetting.class);
-//                                startActivity(intent);
+                                intent = new Intent(getApplicationContext(), ActivityAbout.class);
+                                startActivity(intent);
                                 break;
                             default:
                                 break;
