@@ -55,13 +55,16 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
         holder.textViewDay.setText("04/02/97");
 //        holder.imageViewWeatherStatus.setBackgroundResource();
         holder.textViewTime.setText("7:00 AM");
-        holder.textViewSumarize.setText(post.title);
+        holder.textViewSummarize.setText(post.title);
         for (int i= 1; i< Types.getTypeList().icon.length; i++){
             if (post.type ==  Types.getTypeList().text[i]){
                 holder.imageViewType.setImageResource(Types.getTypeList().icon[i]);
                 break;
             }
         }
+        if (!post.isVerified)
+            holder.imageViewVerified.setVisibility(View.INVISIBLE);
+
         holder.itemView.setOnClickListener(v -> {
             if (itemClickListener != null)
                 itemClickListener.onClick(holder.itemView, position);
@@ -77,16 +80,17 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
 
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewUserName, textViewDay, textViewTime, textViewSumarize;
-        ImageView imageViewType;
+        TextView textViewUserName, textViewDay, textViewTime, textViewSummarize;
+        ImageView imageViewType, imageViewVerified;
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
             textViewUserName = itemView.findViewById(R.id.textViewUserName);
             textViewDay = itemView.findViewById(R.id.textViewDate);
             textViewTime = itemView.findViewById(R.id.textViewTime);
-            textViewSumarize = itemView.findViewById(R.id.textViewSumarize);
+            textViewSummarize = itemView.findViewById(R.id.textViewSumarize);
             imageViewType = itemView.findViewById(R.id.imageViewtype);
+            imageViewVerified = itemView.findViewById(R.id.imageViewVerified);
         }
     }
     public void setItemClickListener(ItemClickListener itemClickListener) {
