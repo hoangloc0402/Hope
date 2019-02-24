@@ -1,15 +1,18 @@
 package com.sunset.hope.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.sunset.hope.adapters.AdapterRCVComment;
 import com.sunset.hope.entities.Comment;
 import com.sunset.hope.R;
+import com.sunset.hope.entities.Post;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,6 +25,8 @@ public class ActivityPostDetail extends AppCompatActivity {
     Button btnComment;
     EditText edtComment;
 
+    TextView tv_post_name, tv_post_date, tv_post_content;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +35,21 @@ public class ActivityPostDetail extends AppCompatActivity {
         rvComment = findViewById(R.id.lv_post_comment);
         edtComment = findViewById(R.id.edt_comment);
         btnComment = findViewById(R.id.btn_comment);
+        tv_post_content = findViewById(R.id.tv_post_content);
+        tv_post_date = findViewById(R.id.tv_post_date);
+        tv_post_name = findViewById(R.id.tv_post_name);
 
         commentList = new ArrayList<>();
+        Intent intent = getIntent();
 
-        for(int i=0;i<50;i++){
-            commentList.add(new Comment(i+"", "comment "+ i,
-                    "Hello User Number "+ i, "owner "+i, "2 hours"));
-        }
+        Post post = MainActivity.postData.get(intent.getIntExtra("post", 0));
 
-        commentList.add(new Comment(1+"", "comment "+ 1,
-                "", "owner ", "2 hours"));
+        commentList = post.getCommentList();
+        tv_post_name.setText(post.getUser().getFullName());
+        tv_post_date.setText(post.getTime() +"");
+        tv_post_content.setText(post.getDescription());
+
+
 
         adapter = new AdapterRCVComment(commentList);
         LinearLayoutManager llm = new LinearLayoutManager(this);

@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,7 +17,11 @@ import android.view.ViewGroup;
 
 import com.sunset.hope.R;
 import com.sunset.hope.activities.ActivityPostDetail;
+import com.sunset.hope.activities.MainActivity;
 import com.sunset.hope.adapters.AdapterRCVPost;
+import com.sunset.hope.entities.Post;
+
+import java.io.Serializable;
 
 public class FragmentDonate extends Fragment {
     View myView;
@@ -48,7 +53,9 @@ public class FragmentDonate extends Fragment {
                         public void onClick(DialogInterface dialog, int which) {
                             switch (which){
                                 case 0:
+                                    Post post = MainActivity.postData.get(position);
                                     Intent intent = new Intent(getContext(), ActivityPostDetail.class);
+                                    intent.putExtra("post", position);
                                     startActivity(intent);
                                     break;
                                 case 1: break;
