@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sunset.hope.adapters.AdapterRCVComment;
@@ -27,6 +28,7 @@ public class ActivityPostDetail extends AppCompatActivity {
     EditText edtComment;
 
     TextView tv_post_name, tv_post_date, tv_post_content;
+    ImageView img_post_avatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +41,14 @@ public class ActivityPostDetail extends AppCompatActivity {
         tv_post_content = findViewById(R.id.tv_post_content);
         tv_post_date = findViewById(R.id.tv_post_date);
         tv_post_name = findViewById(R.id.tv_post_name);
+        img_post_avatar = findViewById(R.id.imv_post_image);
 
         commentList = new ArrayList<>();
         Intent intent = getIntent();
 
         Post post = MainActivity.postData.get(intent.getIntExtra("post", 0));
 
+        img_post_avatar.setImageResource(post.getUser().getAvatarResource());
         commentList = post.getCommentList();
         tv_post_name.setText(post.getUser().getFullName());
         tv_post_date.setText(post.getTime() +"");
@@ -61,7 +65,7 @@ public class ActivityPostDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newComment = edtComment.getText().toString();
-                Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,"1", "Just Now");
+                Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,"vanthanh", "Just Now");
                 commentList.add(comment);
                 edtComment.setText("");
                 adapter.notifyDataSetChanged();

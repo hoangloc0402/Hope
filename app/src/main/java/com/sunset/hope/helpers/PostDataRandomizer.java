@@ -5,6 +5,7 @@ import com.sunset.hope.entities.Post;
 import com.sunset.hope.entities.User;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class PostDataRandomizer {
@@ -74,20 +75,32 @@ public class PostDataRandomizer {
         return user;
     }
 
-    ArrayList<Comment> commentList = new ArrayList<>();
+    ArrayList<Comment> commentList;
 
 
 
-    public static Integer getNum(Integer max){
-        return ThreadLocalRandom.current().nextInt(0, max);
+    public static Integer getNum(int max){
+        Random rand = new Random();
+        return rand.nextInt(max);
     }
 
     public Post getPost(){
+        commentList = new ArrayList<>();
         String postID = postId[getNum(postId.length)];
-        commentList.add(new Comment(postID, "1", "Great", user[getNum(user.length)].getUserName(), "1 hour"));
-        commentList.add(new Comment(postID, "2", "Thank God you are here", user[getNum(user.length)].getUserName(), "1 hour"));
-        commentList.add(new Comment(postID, "3", "God Bless You!", user[getNum(user.length)].getUserName(), "56 minutes"));
-        commentList.add(new Comment(postID, "4", "Thank you!", user[getNum(user.length)].getUserName(), "50 minutes"));
+//        int max = getNum(59);
+        int max = 59;
+        commentList.add(new Comment(postID, "1", "Great", user[getNum(user.length)].getUserName(), String.valueOf(max) +" minutes"));
+//        max = getNum(max);
+        commentList.add(new Comment(postID, "2", "Thank God you are here", user[getNum(user.length)].getUserName(), String.valueOf(max-4) +" minutes"));
+//        max = getNum(max);
+        commentList.add(new Comment(postID, "3", "God Bless You!", user[getNum(user.length)].getUserName(), String.valueOf(max-6) +" minutes"));
+//        max = getNum(max);
+        commentList.add(new Comment(postID, "4", "Thank you!", user[getNum(user.length)].getUserName(), String.valueOf(max-10) +" minutes"));
+//        max = getNum(max);
+        commentList.add(new Comment(postID, "5", "You have made our world better!", user[getNum(user.length)].getUserName(), String.valueOf(max-18) +" minutes"));
+//        max = getNum(max);
+        commentList.add(new Comment(postID, "6", "Call 0969241342!", user[getNum(user.length)].getUserName(), String.valueOf(max-50) +" minutes"));
+//        commentList.add(new Comment(postID, "4", "Thank you!", user[getNum(user.length)].getUserName(), "50 minutes"));
         return new Post(
             postID,
             user[getNum(user.length)],

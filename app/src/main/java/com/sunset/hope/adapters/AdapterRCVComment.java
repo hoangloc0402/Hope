@@ -4,10 +4,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sunset.hope.entities.Comment;
 import com.sunset.hope.R;
+import com.sunset.hope.entities.User;
+import com.sunset.hope.helpers.HelperFunctions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +45,11 @@ public class AdapterRCVComment extends RecyclerView.Adapter<AdapterRCVComment.Re
         if (data == null)
             return;
         Comment comment = data.get(position);
-        holder.tvName.setText(comment.getOwnerId() );
+        User user = HelperFunctions.findUserById(comment.getOwnerId());
+        holder.tvName.setText(user.getFullName());
         holder.tvDate.setText(String.valueOf(comment.getTime()));
         holder.tvContent.setText(comment.getContent());
+        holder.img_avatar.setImageResource(user.getAvatarResource());
 
         holder.itemView.setOnClickListener(v -> {
             if (itemClickListener != null)
@@ -62,12 +67,14 @@ public class AdapterRCVComment extends RecyclerView.Adapter<AdapterRCVComment.Re
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvContent, tvDate;
+        ImageView img_avatar;
 
         public RecyclerViewHolder(View view) {
             super(view);
             tvName = view.findViewById(R.id.tv_comment_name);
             tvContent = view.findViewById(R.id.tv_comment_content);
             tvDate = view.findViewById(R.id.tv_comment_date);
+            img_avatar = view.findViewById(R.id.imv_comment_image);
 
         }
 
