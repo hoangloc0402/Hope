@@ -38,7 +38,10 @@ public class PostDataRandomizer {
             "The mission of Wounded Warrior Project is to honor and empower wounded warriors. Our purpose is: to raise awareness and enlist the public's aid for the needs of severely injured service men and women; to help severely injured service members aid and assist each other; and to provide unique, direct programs and services to meet the needs of severely injured service members.",
             "Charity Navigator is collaborating with GuideStar, GlobalGiving, Classy, and ImpactMatters to display impact-related information for rated nonprofits. However, not all rated nonprofits have provided impact information yet."};
     private boolean[] isClosed = {true, false};
-    private int[] time = {1550920000,1550000000,1550123564,155092253,1550928977};
+    private String[] time = {"24-02-2019 10:10:10","22-02-2019 10:10:12","23-02-2019 14:12:09",
+            "24-02-2019 18:10:00","21-02-2019 09:18:32", "21-02-2019 05:01:32", "16-02-2019 05:01:32",
+            "19-02-2019 07:01:32", "22-02-2019 21:01:32", "24-02-2019 12:01:32", "18-02-2019 05:01:32",
+            "20-02-2019 08:01:32"};
     private String[] title = {
             "Need Food Donation ",
             "Offer Blood of Type A",

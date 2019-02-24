@@ -10,7 +10,7 @@ public class Post {
     int[] images;
     String description;
     boolean isVerified;
-    long time;
+    String time;
     String title;
     Contact contact;
     ArrayList<Comment> commentList;
@@ -43,7 +43,7 @@ public class Post {
         return isVerified;
     }
 
-    public long getTime() {
+    public String getTime() {
         return time;
     }
 
@@ -62,7 +62,7 @@ public class Post {
     public Post() {
     }
 
-    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isVerified, long time, String title, Contact contact, ArrayList<Comment> commentList) {
+    public Post(String postId, User user, String type, String postTags, int[] images, String description, boolean isVerified, String time, String title, Contact contact, ArrayList<Comment> commentList) {
         this.postId = postId;
         this.user = user;
         this.type = type;
