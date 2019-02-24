@@ -8,13 +8,22 @@ public class User {
     private Contact contact = null;
     private Boolean isVerified = null;
     private String description = null;
+    int avatarResource;
+
+    public int getAvatarResource() {
+        return avatarResource;
+    }
+
+    public User(String userName, String fullName, Contact contact, Boolean isVerified, String description, int avatarResource) {
+        this.userName = userName;
+        this.fullName = fullName;
+        this.contact = contact;
+        this.isVerified = isVerified;
+        this.description = description;
+        this.avatarResource = avatarResource;
+    }
 
     public User() {
-        this.userName = "";
-        this.fullName = "";
-        this.contact = new Contact();
-        this.isVerified = false;
-        this.description = "";
     }
 
     public User(String userName, String fullName, Contact contact, Boolean isVerified, String description) {

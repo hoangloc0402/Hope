@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,6 +56,17 @@ public class ActivityPostDetail extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rvComment.setAdapter(adapter);
         rvComment.setLayoutManager(llm);
+
+        btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newComment = edtComment.getText().toString();
+                Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,"1", "Just Now");
+                commentList.add(comment);
+                edtComment.setText("");
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
 
