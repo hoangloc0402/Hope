@@ -11,18 +11,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PostDataRandomizer {
 
     private String[] postId = {"1","2","3","4","5","6","7","8","9","0"};
-    private User[] user = {
-            new User("hoangloc","Nguyen Hoang Loc", new Contact(), true, ""),
-            new User("minhhao","Van Minh Hao", new Contact(), false, ""),
-            new User("vantuong","Nguyen Van Tuong", new Contact(), false, ""),
-            new User("vanthanh","Nguyen Van Thanh", new Contact(), false, ""),
-            new User("anhtien","Nguyen Huu Anh Tien", new Contact(), false, ""),
-            new User("bvq1","Central Hospital", new Contact(), true, ""),
-            new User("bvq2","Cho Ray Hospital", new Contact(), true, ""),
-            new User("bvq3","115 Hospital", new Contact(), true, ""),
-            new User("bvq4","Thong Nhat Hospital", new Contact(), true, ""),
-            new User("bvq5","Chan Thuong Chinh Hinh Hospital", new Contact(), true, "")
-    };
     private String[] type = {"Bloods", "Clothes", "Foods", "Medicines", "Money"};
     private String[] postTags = {"Donation", "Request"};
     private int[] images = null;
@@ -72,6 +60,29 @@ public class PostDataRandomizer {
             "khasan@gmail.com",
             "khanghihi@gmail.com",
             "vanhung@gmail.com"
+    };
+
+    private User[] user = {
+            new User("hoangloc","Nguyen Hoang Loc",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), true, ""),
+            new User("minhhao","Van Minh Hao",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), false, ""),
+            new User("vantuong","Nguyen Van Tuong",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), false, ""),
+            new User("vanthanh","Nguyen Van Thanh",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), false, ""),
+            new User("anhtien","Nguyen Huu Anh Tien",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), false, ""),
+            new User("bvq1","Central Hospital",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), true, ""),
+            new User("bvq2","Cho Ray Hospital",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), true, ""),
+            new User("bvq3","115 Hospital",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), true, ""),
+            new User("bvq4","Thong Nhat Hospital",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), true, ""),
+            new User("bvq5","Chan Thuong Chinh Hinh Hospital",
+                    new Contact(phone[getNum(phone.length)], address[getNum(address.length)], mail[getNum(mail.length)]), true, "")
     };
 
     public User[] getUser() {

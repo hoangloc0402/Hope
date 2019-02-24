@@ -15,7 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sunset.hope.R;
+import com.sunset.hope.activities.ActivityPostDetail;
+import com.sunset.hope.activities.MainActivity;
 import com.sunset.hope.adapters.AdapterRCVPost;
+import com.sunset.hope.entities.Post;
 
 public class FragmentRequest extends Fragment {
     View myView;
@@ -43,13 +46,26 @@ public class FragmentRequest extends Fragment {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("Option");
             builder.setItems(R.array.listOption, new DialogInterface.OnClickListener() {
+
                 public void onClick(DialogInterface dialog, int which) {
+                    Intent intent;
+                    Post post;
                     switch (which){
-                        case 0: break;
-                        case 1: break;
+                        case 0:
+                            post = MainActivity.postData.get(position);
+                            intent = new Intent(getContext(), ActivityPostDetail.class);
+                            intent.putExtra("post", position);
+                            startActivity(intent);
+                            break;
+                        case 1:
+                            post = MainActivity.postData.get(position);
+                            intent = new Intent(getContext(), ActivityPostDetail.class);
+                            intent.putExtra("post", position);
+                            startActivity(intent);
+                            break;
                         case 3: break;
                         case 2:
-                            Intent intent = new Intent(Intent. ACTION_DIAL, Uri.parse("tel:" + "0326633637"));
+                            intent = new Intent(Intent. ACTION_DIAL, Uri.parse("tel:" + "0326633637"));
                             startActivity(intent);
                             break;
                         default:break;

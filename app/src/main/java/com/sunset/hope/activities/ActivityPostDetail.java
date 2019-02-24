@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sunset.hope.adapters.AdapterRCVComment;
 import com.sunset.hope.entities.Comment;
@@ -65,10 +66,16 @@ public class ActivityPostDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newComment = edtComment.getText().toString();
-                Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,MainActivity.currentUser.getUserName(), "Just Now");
-                commentList.add(comment);
-                edtComment.setText("");
-                adapter.notifyDataSetChanged();
+                if (newComment.isEmpty()){
+                    Toast.makeText(ActivityPostDetail.this, "Comment cannot be empty", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,MainActivity.currentUser.getUserName(), "Just Now");
+                    commentList.add(comment);
+                    edtComment.setText("");
+                    adapter.notifyDataSetChanged();
+                }
+
             }
         });
     }

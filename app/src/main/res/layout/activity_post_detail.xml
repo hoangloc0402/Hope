@@ -92,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/edt_comment"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:background="@drawable/round_background"
             android:inputType="textMultiLine"
             android:paddingLeft="5dp"
