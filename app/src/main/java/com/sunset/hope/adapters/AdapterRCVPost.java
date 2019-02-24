@@ -54,9 +54,9 @@ public class AdapterRCVPost extends RecyclerView.Adapter<AdapterRCVPost.Recycler
             return;
         Post post = data.get(position);
         holder.textViewUserName.setText(post.getUser().getFullName());
-        holder.textViewDay.setText("04/02/97");
+        holder.textViewDay.setText(post.getTime());
 //        holder.imageViewWeatherStatus.setBackgroundResource();
-        holder.textViewTime.setText("7:00 AM");
+//        holder.textViewTime.setText("7:00 AM");
         holder.textViewSummarize.setText(post.getTitle());
         for (int i = 1; i< Types.getTypeList().getIcon().length; i++){
             if (post.getType() ==  Types.getTypeList().getText()[i]){
