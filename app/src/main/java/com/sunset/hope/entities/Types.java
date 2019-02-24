@@ -26,7 +26,7 @@ public class Types {
                 R.drawable.spn_foods,
                 R.drawable.spn_medicines,
                 R.drawable.spn_money},
-                new String[]{"Select Tag",
+                new String[]{"Select Type",
                         "Bloods",
                         "Clothes",
                         "Foods",

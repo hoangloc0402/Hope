@@ -1,9 +1,13 @@
 package com.sunset.hope.activities;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextThemeWrapper;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -68,6 +72,11 @@ public class ActivityPost extends AppCompatActivity {
 
 
         userAvatar.setImageResource(R.drawable.avatar_01);
+        userName.setText(MainActivity.currentUser.getFullName());
+        emailInput.setText(MainActivity.currentUser.getContact().getEmail());
+        phoneNumberInput.setText(MainActivity.currentUser.getContact().getPhoneNumber());
+        addressInput.setText(MainActivity.currentUser.getContact().getAddress());
+
         setTypeSpinner();
         setTagSpinner();
 
@@ -89,6 +98,13 @@ public class ActivityPost extends AppCompatActivity {
 //                    Post post = new Post("P111111", "U111111", typeString, new String[]{"", ""}, new int[]{0,0}, descriptionString, false, 0, titleString, contact);
 
                 //send to Firebase
+            }
+        });
+
+        postButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProgressDialog.show(ActivityPost.this, "", "Be happy <3");
             }
         });
     }

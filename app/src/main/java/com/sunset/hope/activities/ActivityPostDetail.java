@@ -65,7 +65,7 @@ public class ActivityPostDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newComment = edtComment.getText().toString();
-                Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,"vanthanh", "Just Now");
+                Comment comment = new Comment(post.getPostId(), String.valueOf(commentList.size()+1),newComment,MainActivity.currentUser.getUserName(), "Just Now");
                 commentList.add(comment);
                 edtComment.setText("");
                 adapter.notifyDataSetChanged();

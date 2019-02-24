@@ -38,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.iconfinder_10,
             R.drawable.iconfinder_11
     };
+    public static User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_layout);
+
         createData();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -128,5 +130,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0; i<10; i++){
             postData.add(randomizer.getPost());
         }
+
+        currentUser = userList.get(0);
     }
 }
