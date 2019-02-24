@@ -39,7 +39,7 @@ public class ActivityPost extends AppCompatActivity {
     }
 
     public void setTagSpinner(){
-        int[] icon = {R.drawable.spn_drop_down, R.drawable.spn_foods, R.drawable.spn_foods};
+        int[] icon = {R.drawable.spn_drop_down, R.drawable.spn_donate, R.drawable.spn_help};
         String[] text = {"Select Tag", "Donate", "Request"};
 
         CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), icon, text);
@@ -67,7 +67,7 @@ public class ActivityPost extends AppCompatActivity {
         tagsInput = findViewById(R.id.spn_tags);
 
 
-//        userAvatar.setImageResource(R.drawable.avatar_01);
+        userAvatar.setImageResource(R.drawable.avatar_01);
         setTypeSpinner();
         setTagSpinner();
 
