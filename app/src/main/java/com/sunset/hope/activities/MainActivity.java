@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.sunset.hope.entities.User;
 import com.sunset.hope.fragments.FragmentMain;
 import com.sunset.hope.helpers.PostDataRandomizer;
 import com.sunset.hope.R;
@@ -21,6 +22,22 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     public static ArrayList<Post> postData;
+    public static ArrayList<User> userList = new ArrayList<>();
+    public static ArrayList<String> userKey = new ArrayList<>();
+    public static int[] avatarList = {
+            R.drawable.iconfinder_1,
+            R.drawable.iconfinder_4_avatar,
+            R.drawable.iconfinder_5,
+            R.drawable.iconfinder_5_avatar,
+            R.drawable.iconfinder_7_avatar,
+            R.drawable.iconfinder_8,
+            R.drawable.iconfinder_8_avatar,
+            R.drawable.iconfinder_9,
+            R.drawable.iconfinder_9_2,
+            R.drawable.iconfinder_9_avatar,
+            R.drawable.iconfinder_10,
+            R.drawable.iconfinder_11
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -102,6 +120,11 @@ public class MainActivity extends AppCompatActivity {
     public static void  createData(){
         postData = new ArrayList<>();
         PostDataRandomizer randomizer = new PostDataRandomizer();
+        User[] users = randomizer.getUser();
+        for(int i=0;i<users.length;i++){
+            userList.add(users[i]);
+            userKey.add(users[i].getUserName());
+        }
         for (int i=0; i<10; i++){
             postData.add(randomizer.getPost());
         }

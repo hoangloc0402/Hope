@@ -1,6 +1,10 @@
 package com.sunset.hope.entities;
 
+import com.sunset.hope.activities.MainActivity;
 import com.sunset.hope.entities.Contact;
+import com.sunset.hope.helpers.PostDataRandomizer;
+
+import java.util.Random;
 
 public class User {
     private String userName = null;
@@ -32,6 +36,7 @@ public class User {
         this.contact = contact;
         this.isVerified = isVerified;
         this.description = description;
+        avatarResource = MainActivity.avatarList[PostDataRandomizer.getNum(MainActivity.avatarList.length)];
     }
 
     public String getUserName() {

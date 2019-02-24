@@ -70,11 +70,15 @@ public class PostDataRandomizer {
             "vanhung@gmail.com"
     };
 
+    public User[] getUser() {
+        return user;
+    }
+
     ArrayList<Comment> commentList = new ArrayList<>();
 
 
 
-    Integer getNum(Integer max){
+    public static Integer getNum(Integer max){
         return ThreadLocalRandom.current().nextInt(0, max);
     }
 
